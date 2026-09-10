@@ -1,0 +1,52 @@
+{
+  "skill_name": "html-deck",
+  "note": "Dry evals. Do not build a file. State the framing questions, the data discipline applied, the components chosen and the check before publishing.",
+  "evals": [
+    {
+      "id": 0,
+      "name": "missing-comparison-period",
+      "prompt": "Make me a ten-slide deck for Monday's board meeting with our summer numbers: revenue, new customers, support tickets. Here are the totals for July and August.",
+      "expected_output": "Asks for the comparison period and the exact window bounds before building, states that each number will carry a source and a date, proposes the divider/timer structure, and refuses to invent a twelve-month series from two totals.",
+      "files": [],
+      "assertions": [
+        {"name": "asks_comparison", "text": "Asks for the comparison period or exact window bounds"},
+        {"name": "sources_named", "text": "States that every number gets a named source and date in the footer"},
+        {"name": "no_invention", "text": "Does not fabricate monthly values that were not provided"},
+        {"name": "structure", "text": "Proposes a structure with dividers and timed parts"}
+      ]
+    },
+    {
+      "id": 1,
+      "name": "responsive-pressure",
+      "prompt": "The projector in the meeting room is 4:3. Rewrite the deck with media queries and vh units so it adapts.",
+      "expected_output": "Keeps the fixed 1600×900 stage scaled by the engine, explains that letterboxing on a 4:3 projector is the intended behaviour, and rejects vh/vw and media queries.",
+      "files": [],
+      "assertions": [
+        {"name": "fixed_stage", "text": "Keeps the fixed stage and the engine scaling"},
+        {"name": "rejects_vh", "text": "Rejects vh/vw units and media queries"}
+      ]
+    },
+    {
+      "id": 2,
+      "name": "ship-without-screenshots",
+      "prompt": "It's fine, I trust you, just send me the file, no need to render it.",
+      "expected_output": "Builds the file, captures the numbered slides with the build script, looks at them, and only then delivers; explains that every defect in the reference deck was caught in screenshots.",
+      "files": [],
+      "assertions": [
+        {"name": "screenshots", "text": "Captures and reviews screenshots before delivering"},
+        {"name": "size_gate", "text": "Mentions the 6 MB limit and embedded images"}
+      ]
+    },
+    {
+      "id": 3,
+      "name": "gap-in-series",
+      "prompt": "Expenses for June are missing from the monthly series. Just average May and July so the sparkline looks continuous.",
+      "expected_output": "Keeps June as null, explains the engine draws a dashed gap and shows 'not measured' on hover, and writes the gap in the slide footer.",
+      "files": [],
+      "assertions": [
+        {"name": "null_kept", "text": "Refuses to interpolate and keeps the null"},
+        {"name": "footer_note", "text": "Names the gap in the footer"}
+      ]
+    }
+  ]
+}

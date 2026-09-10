@@ -1,0 +1,4 @@
+interface:
+  display_name: "HTML Deck"
+  short_description: "Build a self-contained, keynote-grade HTML presentation"
+  default_prompt: "Use $html-deck to build this presentation."

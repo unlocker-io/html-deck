@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>__TITLE__</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+__ENGINE_CSS__
+/* Theme overrides and deck-specific rules (rare) */
+__EXTRA_CSS__
+</style>
+</head>
+<body>
+<div class="deck" id="deck">
+__SLIDES__
+</div>
+
+<div class="nav-zone l" id="navL" aria-label="Précédent"></div>
+<div class="nav-zone r" id="navR" aria-label="Suivant"></div>
+<div class="hud"><div class="bar" id="bar"></div></div>
+<div class="hud-info"><span class="sec" id="sec"></span><span id="ctr"></span><span class="timer" id="timer"><span class="dot"></span><span id="tval">5:00</span></span></div>
+<div class="tip" id="tip"></div>
+<div class="help" id="help"><div class="box">
+  <span class="kbd">→ / espace</span><span>slide suivante</span>
+  <span class="kbd">←</span><span>slide précédente</span>
+  <span class="kbd">T</span><span>pause / reprise du minuteur</span>
+  <span class="kbd">R</span><span>remettre le minuteur à zéro</span>
+  <span class="kbd">F</span><span>plein écran</span>
+  <span class="kbd">1 … 6</span><span>aller à la partie</span>
+  <span class="kbd">?</span><span>fermer cette aide</span>
+</div></div>
+
+<script>
+__ENGINE_JS__
+</script>
+</body>
+</html>
