@@ -164,6 +164,7 @@
     s.querySelectorAll('.chart[data-combo]').forEach(combo);
     s.querySelectorAll('.spark[data-spark]').forEach(spark);
     var t=parseInt(s.dataset.timer||'0',10); if(t) tStart(t); else tStop();
+    try{ if(window.parent&&window.parent!==window) window.parent.postMessage({type:'deck:slide',index:i+1,total:slides.length},'*'); }catch(e){}
     if(push!==false) history.replaceState(null,'','#'+(i+1));
   }
   var sectionStarts=slides.map(function(s,i){return (s.classList.contains('divider')||s.classList.contains('qa'))?i:-1;}).filter(function(i){return i>=0;}).slice(0,9);

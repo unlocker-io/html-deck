@@ -88,6 +88,8 @@ Non-negotiable build rules:
 - **Motion**: counters (`data-count`), bars, lines and sparklines animate on arrival, and
   everything honours `prefers-reduced-motion`. No decorative animation on top.
 
+- **Progress**: on every slide change the engine emits `window.parent.postMessage({type:'deck:slide', index, total}, '*')` (`index` is 1-based). A host embedding the deck in an iframe can listen to it for reading statistics; a deck opened on its own emits nothing useful and never breaks.
+
 ### 5. Check by screenshot, slide by slide
 
 No deck ships without looking at the slides that carry numbers. The script captures a list of
