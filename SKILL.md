@@ -90,6 +90,8 @@ Non-negotiable build rules:
 
 - **Progress**: on every slide change the engine emits `window.parent.postMessage({type:'deck:slide', index, total}, '*')` (`index` is 1-based). A host embedding the deck in an iframe can listen to it for reading statistics; a deck opened on its own emits nothing useful and never breaks.
 
+- **PDF and PowerPoint**: the presentations console also accepts a **PDF** (50 MiB max), read page by page by the platform with the same accesses, revocation and statistics (one page = one slide). A PowerPoint, Keynote or Google Slides deck is shared by **exporting it to PDF** (fonts embedded, faithful rendering): the platform does not convert `.pptx` files.
+
 ### 5. Check by screenshot, slide by slide
 
 No deck ships without looking at the slides that carry numbers. The script captures a list of
